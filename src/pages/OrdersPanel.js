@@ -1,29 +1,15 @@
+// src/components/OrdersPanel.js
 import React, { useEffect, useState } from 'react';
-import Card from 'react-bootstrap/Card'; // Importa el componente Card de Bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css'; // Importa los estilos de Bootstrap
+import Card from 'react-bootstrap/Card';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ordersData } from '../data/Data'; // Importa los datos
 
 const OrdersPanel = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        // Simular una petición al backend para obtener los pedidos
-        setOrders([
-            { id: 1, description: 'Mesa de madera', status: 'Pendiente', image: '/images/MesaMadera.jpg' },
-            { id: 2, description: 'Silla de roble', status: 'En progreso', image: '/images/SillaMadera.jpg' },
-            { id: 3, description: 'Estante vintage', status: 'Completado', image: '/images/EstanteMaderaHierro.jpg' },
-            { id: 4, description: 'Mesa de café', status: 'Pendiente', image: '/images/MesaCafe.jpg' },
-            { id: 5, description: 'Silla moderna', status: 'En progreso', image: '/images/SillaModerna.jpg' },
-            { id: 6, description: 'Estante flotante', status: 'Completado', image: '/images/EstanteFlotante.jpg' },
-            { id: 7, description: 'Mesa de jardín', status: 'Pendiente', image: '/images/MesaJardin.jpg' },
-            { id: 8, description: 'Silla plegable', status: 'En progreso', image: '/images/SillaPlegable.jpg' },
-            { id: 9, description: 'Estante modular', status: 'Completado', image: '/images/EstanteModular.jpg' },
-            { id: 10, description: 'Mesa de centro', status: 'Pendiente', image: '/images/MesaCentro.jpg' },
-            { id: 11, description: 'Silla ergonómica', status: 'En progreso', image: '/images/SillaErgonomica.jpg' },
-            { id: 12, description: 'Estante rústico', status: 'Completado', image: '/images/EstanteRustico.jpg' },
-            { id: 13, description: 'Mesa extensible', status: 'Pendiente', image: '/images/MesaExtensible.jpg' },
-            { id: 14, description: 'Silla de comedor', status: 'En progreso', image: '/images/SillaComedor.jpg' },
-            { id: 15, description: 'Estante industrial', status: 'Completado', image: '/images/EstanteIndustrial.jpg' },
-        ]);
+        // Usa los datos importados
+        setOrders(ordersData);
     }, []);
 
     return (
@@ -37,9 +23,9 @@ const OrdersPanel = () => {
                                 variant="top" 
                                 src={order.image} 
                                 style={{ 
-                                    width: '100%', // Ajusta al ancho de la tarjeta
-                                    height: '200px', // Altura fija
-                                    objectFit: 'cover' // Ajusta la imagen para cubrir el espacio
+                                    width: '100%', 
+                                    height: '200px', 
+                                    objectFit: 'cover' 
                                 }} 
                             />
                             <Card.Body>

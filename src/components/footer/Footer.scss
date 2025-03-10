@@ -1,0 +1,25 @@
+// Footer.scss
+.footer {
+    background-color: #343a40; // Color de fondo oscuro
+    color: white; // Color del texto
+
+    a {
+        color: white; // Color de los enlaces
+        text-decoration: none; // Sin subrayado
+
+        &:hover {
+            color: #f8f9fa; // Color al pasar el mouse
+            text-decoration: underline; // Subrayado al pasar el mouse
+        }
+    }
+
+    .social-icons {
+        a {
+            transition: color 0.3s ease; // Transición suave para los iconos
+
+            &:hover {
+                color: #007bff; // Color azul al pasar el mouse
+            }
+        }
+    }
+}
